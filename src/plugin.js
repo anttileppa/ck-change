@@ -28,7 +28,7 @@
       this._oldContent = '';
       this._paused = false;
     },
-    proto : {
+    proto : /** @lends ChangeObserver.prototype */ {
       /**
        * Returns editor observer observes
        * 
@@ -127,7 +127,7 @@
         }, 0, _this);
       });
     },
-    proto : {
+    proto : /** @lends MutationChangeObserver.prototype */ {
       /**
        * Starts observer
        */
@@ -173,7 +173,7 @@
         _this._onDOMSubtreeModified(event);
       };
     },
-    proto : {
+    proto : /** @lends DOMSubtreeModifiedChangeObserver.prototype */ {
       /**
        * Starts observer
        */
@@ -212,7 +212,7 @@
       this.base(editor);
       this._timer = null;
     },
-    proto : {
+    proto : /** @lends PollingChangeObserver.prototype */ {
       /**
        * Starts observer
        */      
