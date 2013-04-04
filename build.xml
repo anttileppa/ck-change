@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="ck-change" default="all">
 
-	<property name="project" value="change" />
+  <property name="project" value="change" />
+  <property name="filename" value="plugin" />
 	<property name="version" value="1.0.0" />
 
 	<taskdef name="jsdoctoolkit" classname="uk.co.darrenhurley.ant.tasks.JsDocToolkit">
@@ -18,16 +19,16 @@
 	</target>
 
 	<target name="build">
-		<concat destfile="dist/${project}-uncompressed.js" encoding="UTF-8">
+		<concat destfile="dist/${filename}-uncompressed.js" encoding="UTF-8">
 		  <filelist>
         <file name="src/plugin.js"/>
 		  </filelist>
 		</concat>
 
 		<java jar="${yuicompressor-jar}" fork="true">
-			<arg value="dist/${project}-uncompressed.js" />
+			<arg value="dist/${filename}-uncompressed.js" />
 			<arg value="-o" />
-			<arg value="dist/${project}.js" />
+			<arg value="dist/${filename}.js" />
 		</java>
 	</target>
 	
